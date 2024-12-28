@@ -1,0 +1,12 @@
+C:\Users\MeteorV\Documents\Projects\WebAssets\audio\novelbright
+
+for %A in (*.flac) do ffmpeg  -i "%~nA.flac"  -c:v copy  -b:a 320k  "%~nA.mp3"
+
+
+ffmpeg -i ララ.flac -ab 320k -map_metadata 0 -id3v2_version 3 ララ.mp3
+
+
+ffmpeg -i audio.flac -i image.png -map 0:a -map 1 -codec copy -metadata:s:v title="Album cover" -metadata:s:v comment="Cover (front)" -disposition:v attached_pic output.flac
+
+
+ffmpeg -i ララ.mp3 -an -vcodec copy ララ.png
